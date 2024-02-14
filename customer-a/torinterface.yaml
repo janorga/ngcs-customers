@@ -1,0 +1,9 @@
+apiVersion: example.org/v1alpha1
+kind: TORInterface
+metadata:
+  name: "tor-intf-customer-a"
+spec:
+  username: vagrant
+  eth_intf: "Ethernet1/2"
+  vlan: 2
+  target_host: 10.7.191.160
