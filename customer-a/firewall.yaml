@@ -18,7 +18,7 @@ spec:
     action: "accept"
     protocol: "tcp"
     destination:
-      address: "5.5.5.5"
+      address: "5.5.5.15"
       port: 80
   - ruleNumber: 3506
     action: "accept"
