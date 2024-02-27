@@ -8,4 +8,4 @@ spec:
   username: vagrant
   eth_intf: "Ethernet1/2"
   vlan: 2
-  target_host: 10.7.191.160
+  target_host: 10.7.1.30
