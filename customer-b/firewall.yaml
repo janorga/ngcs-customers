@@ -1,0 +1,44 @@
+apiVersion: example.org/v1alpha1
+kind: VyOSClusterFirewall
+metadata:
+  name: "customer-b-firewall"
+  labels:
+    customer: "customer-b"
+spec:
+  clusterName: "cluster01"
+  vyosNodes:
+    primarynode:
+      name: "vyosnode01"
+      url: "https://10.7.1.10"  
+    secondarynode:
+      name: "vyosnode02"
+      url: "https://10.7.1.20"
+  rules:
+  - ruleNumber: 3605
+    action: "accept"
+    protocol: "tcp"
+    destination:
+      address: "5.5.6.15"
+      port: 80
+  - ruleNumber: 3606
+    action: "accept"
+    protocol: "tcp"
+    destination:
+      address: "5.5.6.20"
+      port: 80
+  - ruleNumber: 3607
+    action: "accept"
+    protocol: "tcp"
+    destination:
+      address: "5.5.6.10"
+      port: 8989
+
+  addToAddressGroup:
+    ipAddress: 5.5.6.10
+    addressGroups:
+    - G-21-TCP
+    - G-22-TCP
+    - G-80-TCP
+    - G-443-TCP
+    - G-3389-TCP
+    - CLUSTER_ADDRESSES
